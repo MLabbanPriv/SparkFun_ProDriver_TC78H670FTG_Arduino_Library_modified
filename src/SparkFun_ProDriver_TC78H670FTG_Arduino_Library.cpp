@@ -238,7 +238,7 @@ bool PRODRIVER::errorStat( void )
 // will stop if error is detected during stepping
 // retuns errorStat()
 
-bool PRODRIVER::step( uint16_t steps, bool direction, uint8_t clockDelay)
+bool PRODRIVER::step( uint16_t steps, bool direction, uint8_t clockDelay,float delayRatio )
 {
   enable();
 
@@ -263,11 +263,11 @@ bool PRODRIVER::step( uint16_t steps, bool direction, uint8_t clockDelay)
     pinMode(settings.mode2Pin, OUTPUT);
     digitalWrite(settings.mode2Pin, LOW);
     delayMicroseconds(1); // even out the clock signal, error check takes about 2uSec
-    delay(clockDelay);
+    delayMicroseconds(clockDelay*delayRatio);
     pinMode(settings.mode2Pin, INPUT); // let on-board external pullup to 3.3V pull this pin HIGH
     // check for error
     if(errorStat() == false) return false; // error detected, exit out of here!
-    delay(clockDelay);
+    delayMicroseconds(clockDelay*(1-delayRatio));
   }
   return errorStat();
 }

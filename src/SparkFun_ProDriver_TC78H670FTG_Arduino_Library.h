@@ -148,7 +148,7 @@ public:
 
   bool begin( void ); // Call to apply PRODRIVERSettings and returns ERR stat
   bool errorStat( void );
-  bool step(uint16_t steps = 0, bool direction = 0, uint8_t clockDelay = 2); // returns ERR stat
+  bool step(uint16_t steps = 0, bool direction = 0, uint8_t clockDelay = 300, float delayRatio = 0.5); // returns ERR stat
   bool stepSerial(uint16_t steps, bool direction = 0, uint8_t stepDelay = 2); // only 1:1 stepping, (no microstep support)
   bool changeStepResolution(uint8_t resolution = PRODRIVER_STEP_RESOLUTION_1_1); // only works with "variable" step modes
   bool controlModeSelect( void );

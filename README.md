@@ -1,4 +1,6 @@
 SparkFun ProDriver TC78H670FTG Arduino Library
+MODIFIED
+Testing increasing speed of stepping
 ===========================================================
 
 | ![SparkFun ProDriver - Stepper Motor Driver (TC78H670FTG)](https://cdn.sparkfun.com//assets/parts/1/5/7/5/7/16836-SparkFun_ProDriver_-_Stepper_Motor_Driver__TC78H670FTG_-01a.jpg) | ![SparkFun Mini Stepper Motor Driver - TC78H670FTG](https://cdn.sparkfun.com//assets/parts/2/5/6/5/6/ROB-25167-Stepper-Motor-Carrier-Feature.jpg) |
